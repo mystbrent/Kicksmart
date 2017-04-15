@@ -1,0 +1,9 @@
+{
+    "mongoURI": "mongodb://127.0.0.1/SE4105",
+    "port" : 3000,
+    "auth" : {
+        "secret" : "SUPERCALIFRAGILISTICEXPIADOLICOUS20020202014",
+        "path" : "/api/auth",
+        "service" : "/api/accounts"
+    }
+}
