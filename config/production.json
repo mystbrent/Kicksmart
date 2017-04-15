@@ -1,4 +1,4 @@
 {
-    "mongoURI" : "mongodb://qwertyty123:dolety123@ds141410.mlab.com:41410/se4105",
+    "mongoURI" : "mongodb://qwertyty123:password@ds141410.mlab.com:41410/se4105",
     "port" : "PORT"
 }
