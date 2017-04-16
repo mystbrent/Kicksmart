@@ -29,6 +29,7 @@ export default class RegisterContainer extends React.Component {
   }
   
   async handleRegister() {
+    try {
     const service = app.service('/api/accounts');
     const data = {
       username : this.state.username,
@@ -43,6 +44,10 @@ export default class RegisterContainer extends React.Component {
     if (isValid) {
       this.setState({successful : true});
     }
+  }
+  catch(error) {
+    console.log(error, ' da errors');
+  }
   }
 
   handleClose() {
