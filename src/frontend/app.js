@@ -6,7 +6,7 @@ import authentication from 'feathers-authentication-client';
 
 const host = location.host
 const protocol = host.startsWith('local') ? 'http' : 'https';
-let url = `http://${location.host}`;
+let url = `${protocol}://${location.host}`;
 console.log(url, ' da url');
 if(window.cordova) {
     // url = 'http://169.254.48.107:3000';
