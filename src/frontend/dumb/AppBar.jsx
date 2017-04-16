@@ -25,7 +25,7 @@ const styles = {
 const header = ({ user, profile, close, state, logout, openLogin, successful }) => (
     <div>
         <AppBar
-            title={<span>Nories Footwear</span>}
+            title={<span>Kicks Mart</span>}
             style={styles.appBar}
             showMenuIconButton={false}
             iconElementRight={user ?
@@ -36,13 +36,13 @@ const header = ({ user, profile, close, state, logout, openLogin, successful }) 
                 <Tab
                     icon={<FontIcon className='material-icons'>home</FontIcon>}
                     value={0}
-                    label="HOME"
+                    label="TAGS"
                     containerElement={<Link to="/home" />}
                 />
                 <Tab
                     icon={<FontIcon className='material-icons'>phone</FontIcon>}
                     containerElement={<Link to="/store" />}
-                    label="STORES"
+                    label="HOME"
                 />
             </Tabs>
 

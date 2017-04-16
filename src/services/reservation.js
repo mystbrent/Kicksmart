@@ -17,8 +17,7 @@ function setupReservationService(db) {
             get : [restrictorHook()],
             update : [restrictorHook()],
             create : [transformHook(Reservation), validateHook(db, 'reservations'), loggerHook(db),  cleanerHook(),],
-            patch:[restrictorHook()]
-            
+            patch:[restrictorHook()],
         };
         const afterHook = {
             find : [transformHook(Reservation), timerHook(db),],

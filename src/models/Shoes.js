@@ -28,6 +28,7 @@ export default class Shoes extends Model{
             quantity : Joi.number().integer().positive(),
             availableColors : Joi.array(),
             availableSizes : Joi.array(),
+            tags : Joi.string().required(),
 
         }
     }
