@@ -82,7 +82,7 @@ export default class CardContainer extends React.Component {
         return(
             <div>
                 {
-                    (this.state.shoes && this.state.user)
+                    (this.state.shoes)
                     ? 
                     <div>
                     {(this.state.reserved) ? 

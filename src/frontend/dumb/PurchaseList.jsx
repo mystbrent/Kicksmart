@@ -65,7 +65,6 @@ const purchaseList = ({state, purchases, close}) => (
         <div>
     
       <List>
-        <Subheader>Pending</Subheader>
         {purchases.map(purchase => purchaseItem(purchase))}
       </List>
     

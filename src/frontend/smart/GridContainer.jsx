@@ -66,7 +66,7 @@ export default class GridContainer extends React.Component {
     render() {
         return (
             <div>
-            {(this.state.user && this.shoesAreRetrieved()) ?
+            {(this.shoesAreRetrieved()) ?
                 <div>
                     <GridList tilesData={this.state.menShoes} tag='Men '/>
                     <GridList tilesData={this.state.femaleShoes} tag='Women '/>

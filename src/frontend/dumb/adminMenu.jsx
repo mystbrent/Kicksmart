@@ -46,7 +46,8 @@ const AdminMenu = ({user}) => (
     </List>
     <List>
       <Subheader inset={true}>Functions</Subheader>
-      {item('AddShoes', '/')}      
+      {item('AddShoes', '/')}   
+      {item('AddPromo', '/')}   
     </List>
     </div>
     </div>

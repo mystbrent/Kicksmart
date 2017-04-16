@@ -113,28 +113,13 @@ export default class StoreContainer extends React.Component {
         await this.setState({shoes : allShoes});
     }
 
-//     this.setState({
-// foods: Object.assign(this.state.foods,
-//     this.findFood(id).buyQuantity = (food.canAmmodate(quantity) ? quantity : food.quantity),
-//     this.findFood(id).total = (food.canAmmodate(quantity) ? 
-//     food.getTotalPrice(quantity) : food.getTotalPrice(food.quantity))
-// )
-//             });
-
     componentDidMount() {
         this.retrieveShoes();
-        console.log(this.state.user, ' da user')
         app.service('/api/shoes').on('created' , newShoes => {
             this.setState({shoes : this.state.shoes.concat(newShoes)});
         });
         app.service('/api/shoes').on('removed', deletedShoes => {
             this.setState({shoes : this.state.shoes.filter(shoes => deletedShoes.name !== shoes.name)});
-        });
-        app.service('/api/shoes').on('patched', patchedShoes => {
-            // const modifiedShoes =  this.state.shoes.find(shoes => patchedShoes.name === shoes.name);
-            // this.setState({shoes :  Object.assign(this.state.shoes,
-            //     modifiedShoes = patchedShoes
-            //     )});
         });
     }
 
@@ -142,7 +127,7 @@ export default class StoreContainer extends React.Component {
         return (
             <div> 
                 {
-                this.state.shoes && this.state.user ? 
+                (this.state.shoes)  ? 
                 <Store
                 searchValue={this.state.searchValue}
                 shoes={this.state.shoes}

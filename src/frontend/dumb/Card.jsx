@@ -22,6 +22,13 @@ const styles = {
   card : {
       width : '80%',  
   },
+  image : {
+    display : 'block',
+    maxWidth: '500px',
+    maxHeight: '500px',
+    width: 'auto',
+    height: 'auto',
+  },
 };
 
 const makeSizeChip = (shoes, size, handleTap) => (
@@ -62,11 +69,12 @@ const CardDesign = ({shoes, reserve, user, handleColorTap, handleSizeTap, size, 
       avatar={shoes.brandIcon}
     />
     <CardMedia overlay={<CardTitle title={shoes.name}
-     subtitle={(shoes.hasPromo() ? <span> Discounted Php {shoes.getPromoDiscount()} Total Php {shoes.getTotalPrice().toFixed(2)}
-        <br/> Average Rating: {(shoes.getAverageRating() > 0) ? shoes.getAverageRating().toFixed(2) : 'NO REVIEWS' } </span>
-         : <span> Php. {shoes.price} <br/> Average Rating: {shoes.getAverageRating().toFixed(2)}  </span>)} />}>
-      <img src={shoes.image} />
-
+     subtitle={<span> {(shoes.hasPromo()) ? <p> Php <strike> {shoes.price.toFixed(2)} </strike> to Php {shoes.getTotalPrice().toFixed(2)} </p> : 
+     <p> Php {shoes.getTotalPrice().toFixed(2)} </p>} 
+     {(shoes.hasReview()) ? <p> Average Rating: {shoes.getAverageRating().toFixed(2)} </p> : <p> NO REVIEWS </p>} </span> } /> } >
+     
+      <img style={styles.image}  src={shoes.image} />
+      
     </CardMedia>
     <div style={styles.wrapper}> 
         <p> {color ? 'Selected: ' + color : 'Available Colors:'} </p> 
@@ -78,12 +86,12 @@ const CardDesign = ({shoes, reserve, user, handleColorTap, handleSizeTap, size, 
     </div>
 
     <CardActions>
-      {console.log(user.reservations, ' his reservations')}
       {(shoes.isAvailable() && 
+       user &&
        user.hasReserveAllocation()
        && !user.hasReservedItem(shoes.name)) ? <FlatButton
        onTouchTap={reserve}
-       label={'Reserve'} /> : ''}
+       label={'Reserve'} /> : <FlatButton label={<Link to={'/register'}> Login to Reserve </Link>} />}
       <FlatButton
       label={<Link to={"/reviews/" + shoes._id} >See Reviews </Link>} />
       {(promos.length > 0) ?

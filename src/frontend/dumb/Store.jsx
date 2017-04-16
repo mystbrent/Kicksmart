@@ -11,11 +11,14 @@ import CardContainer from '../smart/CardContainer';
 
 const styles = {
     searchBar : {
-
+        marginTop : '50px',
+    },
+    searchFilter : {
+        marginTop : '10px',
     },
     select : {
-        width : 150
-    }
+        width : 150,
+    },
 };
 
 const items = [
@@ -34,13 +37,6 @@ const allShoes = (shoes) => (
     </div>
 );
 
-/*<TextField
-             name={'searchValue'}
-             hint={'Search'}
-             onChange={handleChange}
-             value={searchValue}
-             />*/
-
 
 const store = ({searchValue, shoes, handleChange, handleSelectChange, selectValue, dataSource}) => (
     <div>
@@ -52,10 +48,9 @@ const store = ({searchValue, shoes, handleChange, handleSelectChange, selectValu
              onUpdateInput={handleChange}
              value={searchValue}
              />
-             
         </div>
-        <br/>
-        <div style={styles.searchBar}>
+
+        <div style={styles.searchFilter}>
             <SelectField
             value={selectValue}
             onChange={handleSelectChange}
@@ -66,7 +61,9 @@ const store = ({searchValue, shoes, handleChange, handleSelectChange, selectValu
             {items}
             </SelectField>
         </div>
+
         {allShoes(shoes)}
+        
     </div>
 );
 

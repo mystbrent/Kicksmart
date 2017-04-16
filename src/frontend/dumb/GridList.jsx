@@ -10,7 +10,7 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     margin : '30px',  
-    //hide overflow
+    marginTop : '60px',
   },
   gridList: {
     display: 'flex',
@@ -30,7 +30,8 @@ const styles = {
     height : 'auto',
   },
   tag : {
-    // right: '50%',
+    position : 'absolute',
+    left : '50%',
   },
   grid : {
     // display : 'absolute', 

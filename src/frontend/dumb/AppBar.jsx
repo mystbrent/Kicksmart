@@ -19,13 +19,24 @@ const styles = {
     },
     tabs: {
         width: '100%',
-    }
+        zIndex : 1,
+    },
+    image : {
+        position : 'absolute',
+        maxWidth: '190px',
+        maxHeight: '190px',
+        width: 'auto',
+        height: 'auto',
+        zIndex : 2,
+        top : '-40px',
+     },
+
 }
 
 const header = ({ user, profile, close, state, logout, openLogin, successful }) => (
     <div>
         <AppBar
-            title={<span>Kicks Mart</span>}
+            title={<img style={styles.image} src='/images/logo.png' />}
             style={styles.appBar}
             showMenuIconButton={false}
             iconElementRight={user ?
@@ -35,12 +46,11 @@ const header = ({ user, profile, close, state, logout, openLogin, successful }) 
             <Tabs style={styles.tabs}>
                 <Tab
                     icon={<FontIcon className='material-icons'>home</FontIcon>}
-                    value={0}
                     label="TAGS"
                     containerElement={<Link to="/home" />}
                 />
                 <Tab
-                    icon={<FontIcon className='material-icons'>phone</FontIcon>}
+                    icon={<FontIcon className='material-icons'>cloud_download</FontIcon>}
                     containerElement={<Link to="/store" />}
                     label="HOME"
                 />

@@ -1,5 +1,7 @@
 import React from 'react';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import theme from '../theme';
 import AppBar from './AppBar';
 import TextField from './TextField';
@@ -20,6 +22,7 @@ import AdminMenuContainer from '../smart/AdminMenuContainer';
 import TableContainer from '../smart/TableContainer';
 import ShoesChartContainer from '../smart/ShoesChartContainer';
 import AddShoesContainer from '../smart/AddShoesContainer';
+import AddPromoContainer from '../smart/AddPromoContainer';
 
 const buttons = (evt, evt2, successful) => (
         <div> 
@@ -81,6 +84,7 @@ const App = ({user, profile, close, state,
         <Route path="/table/:name" component={(props) => <TableContainer props={props} user={user} />} />
         <Route path="/graph/:name" component={(props) => <ShoesChartContainer props={props} user={user} />} />
         <Route path="/addshoes" component={() => <AddShoesContainer user={user} />} />
+        <Route path="/addpromo" component={() => <AddPromoContainer user={user} />} />
         </div>
 
         </div>

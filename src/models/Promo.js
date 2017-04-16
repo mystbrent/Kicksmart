@@ -15,7 +15,7 @@ export default class Promo extends Model{
         return {
             _id : Joi.string(),
             name : Joi.string().required(),
-            discount : Joi.number().required().positive(),
+            discount : Joi.number().required().positive().less(1),
             shoes : Joi.array().required(),
             startDate : Joi.date(),
             endDate : Joi.date()

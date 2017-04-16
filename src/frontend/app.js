@@ -8,7 +8,7 @@ const host = location.host
 const protocol = host.startsWith('local') ? 'http' : 'https';
 let url = `${protocol}://${location.host}`;
 if(window.cordova) {
-    // url = 'http://192.168.1.100:8000';
+    url = 'http://192.168.1.100:8000';
 }
 const socketConnection = nativeSocketio(url);
 const app = feathers()
