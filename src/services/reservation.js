@@ -21,7 +21,7 @@ function setupReservationService(db) {
             
         };
         const afterHook = {
-            find : [transformHook(Reservation), timerHook(db), restrictorHook() ],
+            find : [transformHook(Reservation), timerHook(db),],
             get : [ transformHook(Reservation), timerHook(db), ],
         };
         return setupService(db, '/api/reservations', 'reservations', beforeHook, afterHook);

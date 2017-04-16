@@ -31,7 +31,9 @@ function restrictorHook(options = {}) {
             data = object._id.toString();
           }
           else {
-            data = object[options.ownerField].username;
+            // data = object[options.ownerField].username;
+            data = object[options.ownerField];
+            console.log(data,' ownerField')
           }
           if (hook.params.user[options.idField].toString() !== data
            && hook.params.user.type !== 'Admin') {
