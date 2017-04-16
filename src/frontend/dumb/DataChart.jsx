@@ -36,13 +36,13 @@ const styles = {
         reservations : {
             caption: "Shoes Revservations Report",
             subCaption: "Top shoes being reserved by revenue",
-            numberPrefix: "$",
+            numberPrefix: "",
             theme: "ocean",
         },
         purchases : {
             caption: "Shoes Purchase Report",
-            subCaption: "Top 5 shoes being purchased by revenue",
-            numberPrefix: "$",
+            subCaption: "Top shoes being purchased by revenue",
+            numberPrefix: "",
             theme: "ocean"
         }
     }
