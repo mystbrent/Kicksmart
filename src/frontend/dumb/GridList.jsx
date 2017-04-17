@@ -3,7 +3,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Route, Link } from 'react-router-dom';
-import {indigo200, grey900} from 'material-ui/styles/colors';
+import {indigo200, blue900} from 'material-ui/styles/colors';
 
 const styles = {
   root: {
@@ -20,7 +20,7 @@ const styles = {
     overflowY : 'hidden',    
   },
   titleStyle: {
-    color: grey900,
+    color: blue900,
   },
   imageContainer : {
     width: 200,
@@ -52,7 +52,7 @@ const GridLists = ({tilesData, tag}) => (
           containerElement={<Link to={"/shoes/" + tile._id} />}
           actionIcon={<IconButton><StarBorder color={indigo200} /></IconButton>}
           titleStyle={styles.titleStyle}
-          titleBackground={`linear-gradient(to top, ${grey900} )`}
+          titleBackground={`linear-gradient(to top, ${blue900} )`}
         >        
          <div style={styles.imageContainer}> <img style={styles.image} src={tile.image} /> </div>
         </GridTile>
