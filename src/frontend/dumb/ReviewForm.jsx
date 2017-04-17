@@ -1,5 +1,4 @@
 import React from 'react';
-// import TextField from './TextField';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -40,7 +39,6 @@ const ReviewForm = ({onChange, state, shoes, reviewValue, rating, handleRating, 
     modal={true}
     open={state}
     >
-    {/*<div> {textField(shoes, reviewValue, onChange)} </div>*/}
     <TextField name='body' hint={shoes.name} value={reviewValue} multi={true} rows={3} onChange={onChange}/>
     <div> {ratingField(rating, handleRating)} </div>
     </Dialog>

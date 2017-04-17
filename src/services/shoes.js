@@ -8,7 +8,6 @@ import adminValidatorHook from '../hooks/adminValidator';
 import restrictHook from '../hooks/restrictor';
 
 function setupShoesService(db) {
-    // const beforeHook = {all : [hooks.authenticate('jwt')], create : [transformHook(Shoes)]};
     const beforeHook = {
         create : [transformHook(Shoes), validateHook(db, 'shoes'), adminValidatorHook()],
         patch:[adminValidatorHook(),],

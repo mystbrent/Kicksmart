@@ -45,12 +45,12 @@ const header = ({ user, profile, close, state, logout, openLogin, successful }) 
         >
             <Tabs style={styles.tabs}>
                 <Tab
-                    icon={<FontIcon className='material-icons'>home</FontIcon>}
+                    icon={<FontIcon className='material-icons'>cloud_download</FontIcon>}
                     label="TAGS"
                     containerElement={<Link to="/home" />}
                 />
                 <Tab
-                    icon={<FontIcon className='material-icons'>cloud_download</FontIcon>}
+                    icon={<FontIcon className='material-icons'>home</FontIcon>}
                     containerElement={<Link to="/store" />}
                     label="HOME"
                 />

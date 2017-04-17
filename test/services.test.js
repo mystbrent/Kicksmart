@@ -56,6 +56,7 @@ describe('Services', () => {
             image : 'images/image.jpg',
             name : 'Sample Shoes',
             price : 6000,
+            tags : 'Running',
             availableColors : [{color : 'red', quantity : 41} , {color : 'black', quantity : 23}],
             availableSizes : [{size : 8, quantity : 41}, {size : 10, quantity : 23}],
         };

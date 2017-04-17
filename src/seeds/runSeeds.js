@@ -1,26 +1,22 @@
 import path from 'path';
 import fs from 'fs';
 
-const runSeeds = () => {
-    const collectionName = process.argv[2];
-    const fullPath = path.join(process.cwd(), `src/seeds/${collectionName}.js`);
-    const fileExists = fs.existsSync(fullPath);
+(() => {
+    const name = process.argv[2];
+    const fullPath = path.join(process.cwd(), `src/seeds/${name}.js`);
+    const exists = fs.existsSync(fullPath);
 
-    if(fileExists) {
-       const seedFunc = require(`./${collectionName}`).default;
-       seedFunc()
-        .then(() => {
-            console.log(`Seeds for ${collectionName} successful`);
-            process.exit(0);
-        })
-        .catch(err => {
-            console.log('ERROR OCCURED', err);
-        })
+    if(exists) {
+        const seed = require(`./${name}`).default;
+        try {
+        seed();
+        console.log('Seeding is sucessful.');
+    }
+    catch(err) {
+        console.log('ERRORS: ', err);
+    }  
     }
     else {
-        console.log(`Seed file for ${collectionName} does not exist.`);
+        console.log('Seed does not exist.');
     }
-
-};
-
-runSeeds();
+})();

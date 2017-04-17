@@ -38,7 +38,6 @@ export default class GridContainer extends React.Component {
         const sandals = await service.find({query : {tags : 'Sandals'}});
         const basketball = await service.find({query : {tags : 'Basketball'}});
         const formal = await service.find({query : {tags : 'Formal'}});
-        // const discountedShoes = await service.find({query : {promos : {$not : {$size : 0}}}});
         const discountedShoes = allShoes.filter(shoes => shoes.hasPromo());
         const highRatingShoes = allShoes.filter(shoes => shoes.hasReview() && shoes.hasGoodReviews());
         this.setState({menShoes, femaleShoes, highRatingShoes, discountedShoes,

@@ -3,6 +3,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Route, Link } from 'react-router-dom';
+import {indigo200, grey900} from 'material-ui/styles/colors';
 
 const styles = {
   root: {
@@ -49,9 +50,9 @@ const GridLists = ({tilesData, tag}) => (
           key={tile.name}
           title={tile.name}
           containerElement={<Link to={"/shoes/" + tile._id} />}
-          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          actionIcon={<IconButton><StarBorder color={indigo200} /></IconButton>}
           titleStyle={styles.titleStyle}
-          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          titleBackground={`linear-gradient(to top, ${grey900} )`}
         >        
          <div style={styles.imageContainer}> <img style={styles.image} src={tile.image} /> </div>
         </GridTile>
@@ -62,3 +63,5 @@ const GridLists = ({tilesData, tag}) => (
 );
 
 export default GridLists;
+
+// titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"

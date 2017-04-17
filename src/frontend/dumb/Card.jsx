@@ -86,12 +86,8 @@ const CardDesign = ({shoes, reserve, user, handleColorTap, handleSizeTap, size, 
     </div>
 
     <CardActions>
-      {(shoes.isAvailable() && 
-       user &&
-       user.hasReserveAllocation()
-       && !user.hasReservedItem(shoes.name)) ? <FlatButton
-       onTouchTap={reserve}
-       label={'Reserve'} /> : <FlatButton label={<Link to={'/register'}> Login to Reserve </Link>} />}
+      {(user) ? ((user.hasReserveAllocation() && shoes.isAvailable() && !user.hasReservedItem(shoes.name)) ? 
+      <FlatButton onTouchTap={reserve} label='Reserve' /> : undefined) : <FlatButton label={<Link to='/register'> Login To Reserve </Link>} />}
       <FlatButton
       label={<Link to={"/reviews/" + shoes._id} >See Reviews </Link>} />
       {(promos.length > 0) ?
@@ -102,7 +98,5 @@ const CardDesign = ({shoes, reserve, user, handleColorTap, handleSizeTap, size, 
   </Card>
   </div>
 );
-
-/*<br/> Average Rating: {(shoes.getAverageRating() > 0) ? shoes.getAverageRating() : 'NO REVIEWS' } </span>*/
 
 export default CardDesign;

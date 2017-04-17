@@ -1,7 +1,6 @@
 import {ObjectId} from 'mongodb'; 
+
 const defaults = {
-  // idField: '_id',
-  // ownerField: 'userId'
   idField: 'username',
   ownerField : 'account',
 };

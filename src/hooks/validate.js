@@ -19,9 +19,8 @@ function validateHook(db, collectionName) {
         if (hookDetails.type !== 'before') {
             throw new Error('Can only be used as a before hook.');
         }
-        console.log(hookDetails.data.validate().error , ' errors')
+        // console.log(hookDetails.data.validate().error , ' errors')
         if (await documentIsUnique(db, hookDetails.data, collectionName) && hookDetails.data instanceof Model) {
-            // console.log(hookDetails.data, ' the data');
             if (!hookDetails.data.isValid()) {
                 throw new Error('Data is invalid.');
             }            

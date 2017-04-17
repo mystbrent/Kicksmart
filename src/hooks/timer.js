@@ -11,7 +11,7 @@ function timerHook(db) {
         }
         else if (hookDetails[prop] instanceof Object) {
             if (hookDetails[prop].hasExpired()) {
-                await db.collection('reservations').remove({name : hookDetails[prop].name});
+                await db.collection(collecion).remove({name : hookDetails[prop].name});
             }
         }
         return hookDetails;
